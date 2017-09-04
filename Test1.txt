@@ -1,0 +1,14 @@
+*** Settings ***
+Library		com.robotextension.javaextension.JsonJavaUtil
+
+
+*** Test Cases ***
+TestCase1
+
+	${keyValue}=		GETValueForKey		{"key1":"value1","key2":"value2"}			key1	
+	Log To Console		Value of key is ${keyValue}
+
+TestCase2
+
+	${aggValue}=		JSONKeyAggregateTestIntegers		{"key1":"value1","key2":"value2","key3":[1,2,3]}	key3	
+	Log To Console		Aggreagated of key is ${aggValue}
